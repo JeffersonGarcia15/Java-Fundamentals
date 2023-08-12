@@ -18,5 +18,6 @@ public class AddNumbers {
             System.out.println("Would you like to play again? false for no and true for yes");
             again = scanner.nextBoolean();
         } while (again);
+        scanner.close();
     }
 }
