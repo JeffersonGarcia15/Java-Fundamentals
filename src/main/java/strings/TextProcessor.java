@@ -1,9 +1,11 @@
 package strings;
 
+
 public class TextProcessor {
 
     public static void main(String[] args) {
-        countWords("I love Java");
+        //countWords("I love Java");
+        reverseString("stop"); // "pots"
     }
 
     private static void countWords(String text) {
@@ -16,6 +18,13 @@ public class TextProcessor {
         for (String word : arrayOfStrings) {
             System.out.println(word);
         }
+    }
+
+    private static void reverseString(String text) {
+        for (int i = text.length() - 1; i >= 0; i--) {
+            System.out.print(text.charAt(i));
+        }
+
     }
 
 
