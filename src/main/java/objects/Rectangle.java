@@ -6,9 +6,9 @@ public class Rectangle {
     // Expose behavior(methods) and RESTRICT direct access to data(fields).
 
     // double length; it's access modifier is by default protected and people can directly access these fields
-    private double length;
-    private double width;
-    private int sides = 4;
+    protected double length;
+    protected double width;
+    protected int sides = 4;
 
     // constructor appears after the fields but before the method
 
