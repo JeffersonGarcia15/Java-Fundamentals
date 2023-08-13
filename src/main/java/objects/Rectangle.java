@@ -60,4 +60,8 @@ public class Rectangle {
     public void setSides(int sides) {
         this.sides = sides;
     }
+
+    public void print() {
+        System.out.println("I am a rectangle!");
+    }
 }

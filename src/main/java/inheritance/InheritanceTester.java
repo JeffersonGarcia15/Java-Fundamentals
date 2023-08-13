@@ -1,5 +1,7 @@
 package inheritance;
 
+import objects.Rectangle;
+
 public class InheritanceTester {
     public static void main(String[] args) {
         // constructors in superclasses(parent classes) execute before constructors of the subclass.
@@ -7,7 +9,10 @@ public class InheritanceTester {
 //        Person person = new Person();
 //        Employee employee = new Employee(); // In Person default constructor. printed first because of what I mentioned above.
         Square square = new Square();
-        square.setLength(25);
-        System.out.println((square.calculatePerimeter()));
+        Rectangle rectangle = new Rectangle();
+//        square.setLength(25);
+//        System.out.println((square.calculatePerimeter()));
+        rectangle.print();
+        square.print("square!");
     }
 }
