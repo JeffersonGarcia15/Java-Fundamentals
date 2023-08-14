@@ -1,16 +1,16 @@
 package data_structures;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class CollectionsDemo {
 
     public static void main(String[] args) {
         CollectionsDemo set = new CollectionsDemo();
 //        set.setDemo(); // I did this on purpose to practice. I could have done setDemo() if it was static.
-        listDemo();
+//        listDemo();
+        queueDemo();
+
+
     }
 
     public void setDemo() {
@@ -47,6 +47,25 @@ public class CollectionsDemo {
         System.out.println(fruits.indexOf("grape"));
 
         List moreFruits = List.of("cherry", "plum");
+
+    }
+
+    public static void queueDemo() {
+//        Queue fruits = new LinkedList();
+        Queue<String> fruits = new LinkedList();
+
+
+        fruits.add("apple");
+        fruits.add("lemon");
+        fruits.add("banana");
+        fruits.add("orange");
+        fruits.add("lemon");
+
+        String removed = fruits.remove();
+
+        System.out.println(fruits);
+        System.out.println("removed " + removed);
+        System.out.println("Peak " + fruits.peek());
 
     }
 
