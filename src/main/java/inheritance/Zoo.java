@@ -47,3 +47,15 @@ public class Zoo {
         }
     }
 }
+
+/*
+public abstract Shape{
+  abstract double calculateArea(); the body is meant to be defined in a child class.
+
+This is mostly to serve as a template for other upper classes to use.
+You can't instantiate an abstract class.
+
+public abstract final Shape
+doesn't make sense because abstract is meant to be a template, meant to be used. So for you to say final it means you
+can't inherit it which is the whole point of using an abstract class as a template.
+ */
