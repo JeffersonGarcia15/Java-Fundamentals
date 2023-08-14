@@ -8,8 +8,8 @@ public class CollectionsDemo {
         CollectionsDemo set = new CollectionsDemo();
 //        set.setDemo(); // I did this on purpose to practice. I could have done setDemo() if it was static.
 //        listDemo();
-        queueDemo();
-
+//        queueDemo();
+        mapDemo();
 
     }
 
@@ -67,6 +67,27 @@ public class CollectionsDemo {
         System.out.println("removed " + removed);
         System.out.println("Peak " + fruits.peek());
 
+    }
+
+    public static void mapDemo() {
+        Map<String, Integer> fruitCalories = new HashMap();
+        fruitCalories.put("apple", 95);
+        fruitCalories.put("lemon", 20);
+        fruitCalories.put("banana", 105);
+        fruitCalories.put("orange", 45);
+//        fruitCalories.putIfAbsent("lemon", 17); // Will not override the one with 20.
+        fruitCalories.remove("lemon");
+
+
+        System.out.println(fruitCalories);
+        System.out.println(fruitCalories.get("banana"));
+        System.out.println(fruitCalories.get("Something"));
+        System.out.println("Contains orange? " + fruitCalories.containsKey("orange"));
+
+        Map newFruits = Map.of(
+                "apple", 95,
+                "lemon", 20
+        );
     }
 
 }
