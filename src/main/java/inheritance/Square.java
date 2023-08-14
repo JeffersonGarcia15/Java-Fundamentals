@@ -2,6 +2,10 @@ package inheritance;
 
 import objects.Rectangle;
 
+// public sealed class Shape permits Rectangle, Circle
+// public sealed(non-sealed or final are your options) class Rectangle extends Shape permits Square
+// if non-sealed then the child classes don't have to specify sealed/non-sealed/final
+//  means that the class can't have subclasses. It cannot be inherited from.
 public class Square extends Rectangle {
     @Override
     public double calculatePerimeter() {
