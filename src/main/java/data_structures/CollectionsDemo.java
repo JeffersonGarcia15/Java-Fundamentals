@@ -6,10 +6,10 @@ public class CollectionsDemo {
 
     public static void main(String[] args) {
         CollectionsDemo set = new CollectionsDemo();
-//        set.setDemo(); // I did this on purpose to practice. I could have done setDemo() if it was static.
+        set.setDemo(); // I did this on purpose to practice. I could have done setDemo() if it was static.
 //        listDemo();
 //        queueDemo();
-        mapDemo();
+//        mapDemo();
 
     }
 
@@ -19,15 +19,27 @@ public class CollectionsDemo {
         fruits.add("banana");
         fruits.add("lemon");
 
-        System.out.println(fruits);
+        // ***************** ITERATORS **************
+        Iterator i = fruits.iterator();
+        do {
+            System.out.println(i.next());
+        } while (i.hasNext());
+//        for (Object fruit : fruits) {
+//            System.out.println(fruit);
+//        }
+//        while(i.hasNext()) {
+//            System.out.println(i.next());
+//        }
 
-        System.out.println(fruits.contains("lemon")); // true
-        fruits.remove("lemon");
-        System.out.println(fruits.contains("lemon")); // false
+//        System.out.println(fruits);
 
-        System.out.println(fruits.size());
-
-        Set moreFruits = Set.of("pear", "raisin", "cherry");
+//        System.out.println(fruits.contains("lemon")); // true
+//        fruits.remove("lemon");
+//        System.out.println(fruits.contains("lemon")); // false
+//
+//        System.out.println(fruits.size());
+//
+//        Set moreFruits = Set.of("pear", "raisin", "cherry");
 
     }
 
@@ -77,6 +89,15 @@ public class CollectionsDemo {
         fruitCalories.put("orange", 45);
 //        fruitCalories.putIfAbsent("lemon", 17); // Will not override the one with 20.
         fruitCalories.remove("lemon");
+
+        Set mapEntries = fruitCalories.entrySet();
+        var i = mapEntries.iterator();
+
+        while (i.hasNext()) {
+            Map.Entry entry = (Map.Entry)i.next();
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue());
+        }
 
 
         System.out.println(fruitCalories);
