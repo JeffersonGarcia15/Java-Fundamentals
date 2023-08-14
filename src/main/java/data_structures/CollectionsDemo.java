@@ -6,10 +6,10 @@ public class CollectionsDemo {
 
     public static void main(String[] args) {
         CollectionsDemo set = new CollectionsDemo();
-        set.setDemo(); // I did this on purpose to practice. I could have done setDemo() if it was static.
+//        set.setDemo(); // I did this on purpose to practice. I could have done setDemo() if it was static.
 //        listDemo();
 //        queueDemo();
-//        mapDemo();
+        mapDemo();
 
     }
 
@@ -44,7 +44,7 @@ public class CollectionsDemo {
     }
 
     public static void listDemo() {
-        List fruits = new ArrayList();
+        List<String> fruits = new ArrayList<String>();
 
         fruits.add("apple");
         fruits.add("lemon");
@@ -53,12 +53,16 @@ public class CollectionsDemo {
 
         fruits.set(2, "grape");
         fruits.add("lemon");
-        fruits.remove("lemon");
 
-        System.out.println(fruits.get(1));
-        System.out.println(fruits.indexOf("grape"));
-
-        List moreFruits = List.of("cherry", "plum");
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+//        fruits.remove("lemon");
+//
+//        System.out.println(fruits.get(1));
+//        System.out.println(fruits.indexOf("grape"));
+//
+//        List moreFruits = List.of("cherry", "plum");
 
     }
 
@@ -82,33 +86,39 @@ public class CollectionsDemo {
     }
 
     public static void mapDemo() {
-        Map<String, Integer> fruitCalories = new HashMap();
+        Map<String, Integer> fruitCalories = new HashMap<String, Integer>();
         fruitCalories.put("apple", 95);
         fruitCalories.put("lemon", 20);
         fruitCalories.put("banana", 105);
         fruitCalories.put("orange", 45);
 //        fruitCalories.putIfAbsent("lemon", 17); // Will not override the one with 20.
-        fruitCalories.remove("lemon");
 
-        Set mapEntries = fruitCalories.entrySet();
-        var i = mapEntries.iterator();
+        for (Map.Entry calorieInfo : fruitCalories.entrySet()) {
+            System.out.println(calorieInfo.getKey() + " : " + calorieInfo.getValue());
 
-        while (i.hasNext()) {
-            Map.Entry entry = (Map.Entry)i.next();
-            System.out.println(entry.getKey());
-            System.out.println(entry.getValue());
         }
 
-
-        System.out.println(fruitCalories);
-        System.out.println(fruitCalories.get("banana"));
-        System.out.println(fruitCalories.get("Something"));
-        System.out.println("Contains orange? " + fruitCalories.containsKey("orange"));
-
-        Map newFruits = Map.of(
-                "apple", 95,
-                "lemon", 20
-        );
+//        fruitCalories.remove("lemon");
+//
+//        Set mapEntries = fruitCalories.entrySet();
+//        var i = mapEntries.iterator();
+//
+//        while (i.hasNext()) {
+//            Map.Entry entry = (Map.Entry)i.next();
+//            System.out.println(entry.getKey());
+//            System.out.println(entry.getValue());
+//        }
+//
+//
+//        System.out.println(fruitCalories);
+//        System.out.println(fruitCalories.get("banana"));
+//        System.out.println(fruitCalories.get("Something"));
+//        System.out.println("Contains orange? " + fruitCalories.containsKey("orange"));
+//
+//        Map newFruits = Map.of(
+//                "apple", 95,
+//                "lemon", 20
+//        );
     }
 
 }
