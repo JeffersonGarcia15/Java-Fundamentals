@@ -1,6 +1,7 @@
 package data_structures;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 public class CollectionsDemo {
 
@@ -119,6 +120,28 @@ public class CollectionsDemo {
 //                "apple", 95,
 //                "lemon", 20
 //        );
+    }
+
+    public static void functionalInterfaces() {
+        List<String> countries = List.of("El Salvador", "United States of America", "Brazil", "France");
+
+//        countries.forEach(System.out::println); // method reference
+//        countries.forEach(c -> System.out.println(c)); // lambda expression
+
+//        Consumer print = c -> System.out.println(c);
+//        countries.forEach(print);
+
+        /*
+        @FunctionalInterface
+public interface Consumer<T> {
+
+        void accept(T t); Abstract method that accepts a single input argument and it returns void.
+        }
+         */
+        Consumer print = c -> System.out.println(c); // Basically our lambda function becomes the body(implementation) of the void accept(T, t) method
+        // so the lambda becomes the implementation of the interface's single abstract method which in this case is the accept method.
+
+        print.accept("Hello, World!");
     }
 
 }
