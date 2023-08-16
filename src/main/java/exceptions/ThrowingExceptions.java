@@ -1,5 +1,9 @@
 package exceptions;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class ThrowingExceptions {
 
     public static double calculatePay(double hours, double payRate) throws NegativeInputException {
@@ -12,5 +16,17 @@ public class ThrowingExceptions {
         }
 
         return hours*payRate;
+    }
+
+    public static void rethrowException() throws IOException {
+        File file = new File("nonexistent.txt");
+        file.createNewFile();
+    }
+
+    // Polymorphic throws statement
+    public static void rethrowExceptions() throws IOException {
+        File file = new File("nonexistent.txt");
+        file.createNewFile();
+        Scanner fileReader = new Scanner(file);
     }
 }
