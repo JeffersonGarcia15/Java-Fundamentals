@@ -2,17 +2,14 @@ package exceptions;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class MultipleExceptionHandler {
+public class TryWithResources {
 
     public static void main(String[] args) {
         File file = new File("files/numbers.txt");
-        Scanner fileReader = null;
-        try {
-            fileReader  = new Scanner(file);
+        try (Scanner fileReader  = new Scanner(file)) { // only sub-classes of the autocloseable class can be here
             while (fileReader.hasNext()) {
                 System.out.println("The number is: " + fileReader.nextDouble());
             }
@@ -22,14 +19,5 @@ public class MultipleExceptionHandler {
             // there is no possible way to get to the child exceptions.
             System.out.println(error.getMessage());
         }
-//        } finally {
-//            fileReader.close();
-//        }
-//        try {
-//            file.createNewFile();
-//
-//        } catch (IOException error) {
-//            System.out.println(error.getMessage());
-//        }
     }
 }
